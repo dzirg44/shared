@@ -65,6 +65,7 @@ def slackMessageBuilder() {
     ])
     payload['attachments'][0]['footer'] = "${buildTime}"
     payload['attachments'][0]['ts'] = "${System.currentTimeMillis()/1000}"
-    payload_json = new JsonBuilder( payload ).toPrettyString()
+    payload_json = new JsonBuilder( payload ).toPrettyString()\
+    println(payload_json)
     return payload_json
 }
