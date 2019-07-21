@@ -1,5 +1,5 @@
 import groovy.json.*
-def slackMessageBuilder() {
+def createMessage() {
     def COLOR_MAP = ['SUCCESS': 'good', 'UNSTABLE': 'warning', 'FAILURE': 'danger', 'ABORTED': 'danger']
     def RESULT_MAP = ['SUCCESS': 'Passed', 'UNSTABLE': 'Unstable', 'FAILURE': 'Failed', 'ABORTED': 'Aborted']
     def buildTime = "Build completed, :stopwatch: *Took:* ${currentBuild.durationString}".replace(' and counting', '')
@@ -66,6 +66,5 @@ def slackMessageBuilder() {
     payload['attachments'][0]['footer'] = "${buildTime}"
     payload['attachments'][0]['ts'] = "${System.currentTimeMillis()/1000}"
     payload_json = new JsonBuilder( payload ).toPrettyString()
-    println(payload_json)
     return payload_json
 }
