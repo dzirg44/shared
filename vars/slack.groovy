@@ -68,7 +68,3 @@ def slackMessageBuilder() {
     payload_json = new JsonBuilder( payload ).toPrettyString()
     return payload_json
 }
-
-def info(message) {
-    echo "INFO: ${message}"
-}
