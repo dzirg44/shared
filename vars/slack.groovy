@@ -65,6 +65,6 @@ def createMessage() {
     ])
     payload['attachments'][0]['footer'] = "${buildTime}"
     payload['attachments'][0]['ts'] = "${System.currentTimeMillis()/1000}"
-    payload_json = new JsonBuilder( payload ).toPrettyString()
-    return payload_json
+    //payload_json = new JsonBuilder( payload ).toPrettyString()
+    return payload
 }
