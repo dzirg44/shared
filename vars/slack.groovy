@@ -1,4 +1,3 @@
-import groovy.json.*
 def createMessage() {
     def COLOR_MAP = ['SUCCESS': 'good', 'UNSTABLE': 'warning', 'FAILURE': 'danger', 'ABORTED': 'danger']
     def RESULT_MAP = ['SUCCESS': 'Passed', 'UNSTABLE': 'Unstable', 'FAILURE': 'Failed', 'ABORTED': 'Aborted']
@@ -65,6 +64,5 @@ def createMessage() {
     ])
     payload['attachments'][0]['footer'] = "${buildTime}"
     payload['attachments'][0]['ts'] = "${System.currentTimeMillis()/1000}"
-    //payload_json = new JsonBuilder( payload ).toPrettyString()
     return payload
 }
