@@ -38,6 +38,7 @@ ___Arguments___
 * `createMessage` [] : Create template as map.
 
 ___Inputs___
+
 | arguments | example | type | description |
 | --------- | ------- | ---- | ----------- |
 | n/a       | n/a     | n/a  | n/a         |
@@ -47,4 +48,5 @@ ___Outputs___
 | arguments     | example | type | description                                                |
 | ------------- | ------- | ---- | ---------------------------------------------------------- |
 | generated map | n/a     | map  | you can call nested elements as `sendSlack["attachments"]` |
+
 
