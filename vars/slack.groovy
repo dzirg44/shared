@@ -14,21 +14,21 @@ def createMessage() {
     
     if (env.PROJECT) {
     payload['attachments'][0]['fields'].add([
-      'title': 'Project name :computer::', 
+      'title': 'Project name :computer: :', 
       'value': "`${PROJECT}`", 
       "short": true
     ])
     }
     if (env.SERVICE) {
     payload['attachments'][0]['fields'].add([
-      'title': 'Project service :pushpin::', 
+      'title': 'Project service :pushpin: :', 
       'value': "`${SERVICE}`", 
       "short": true
     ])        
     }
     if (env.ENV) {
     payload['attachments'][0]['fields'].add([
-      'title': 'Project environment  :computer::', 
+      'title': 'Project environment  :computer: :', 
       'value': "`${ENV}`", 
       "short": true
     ])
@@ -44,21 +44,21 @@ def createMessage() {
     def repoURL =  "${GIT_URL}".replace(".git", "")
     def shortCommit = "${GIT_COMMIT}".substring(0, 7)
     payload['attachments'][0]['fields'].add([
-      'title': 'Commit :guitar:', 
+      'title': 'Commit :guitar: :', 
       'value': "${repoURL}/commit/${GIT_COMMIT}", 
       "short": true
     ])
     }
     if (env.GIT_COMMITTER_NAME || env.GIT_COMMITTER_EMAIL) {
     payload['attachments'][0]['fields'].add([
-      'title': 'Commiter :busts_in_silhouette:', 
+      'title': 'Commiter :busts_in_silhouette: :', 
       'value': "`${GIT_COMMITTER_NAME}` <mailto:${GIT_COMMITTER_EMAIL}|${GIT_COMMITTER_EMAIL}>", 
       "short": true
     ])
     }
     if (env.BUILD_USER)
     payload['attachments'][0]['fields'].add([
-      'title': 'Started By:', 
+      'title': 'Started By :relieved: :', 
       'value': "Jenkins user: ${BUILD_USER}", 
       "short": true
     ])
